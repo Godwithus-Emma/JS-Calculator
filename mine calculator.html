@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mine Calculator</title>
+	<link href="dist/mine calculator.css" rel="stylesheet"/>
+	<link href="dist/mdi/css/materialdesignicons.css" rel="stylesheet"/>
+	<script src="dist/mine calculator.js"></script>
+	
+
+</head>
+<body>
+</head>
+ 
+<body>
+	<div class="box bg-white shadow">
+		<h3><i class="mdi mdi-account"></i>Calculator</h3>
+		<div class="display">
+			<input type="text" readonly size="17" id="result">
+		</div>
+		<div class="keys">
+			<p>
+      <input type="button" class="button black" value="7" onClick='TakeValue("7")'>
+	  <input type="button" class="button black" value="8" onClick='TakeValue("8")'>
+	  <input type="button" class="button black" value="9" onClick='TakeValue("9")'>
+	  <input type="button" class="button yellow" value="*" onClick='TakeValue("*")'>
+		</p>
+
+		<p>
+      <input type="button" class="button black" value="4" onClick='TakeValue("4")'>
+	  <input type="button" class="button black" value="5" onClick='TakeValue("5")'>
+	  <input type="button" class="button black" value="6" onClick='TakeValue("6")'>
+	  <input type="button" class="button yellow" value="-" onClick='TakeValue("-")'>
+		</p>
+	<p>
+      <input type="button" class="button black" value="1" onClick='TakeValue("1")'>
+	  <input type="button" class="button black" value="2" onClick='TakeValue("2")'>
+	  <input type="button" class="button black" value="3" onClick='TakeValue("3")'>
+	  <input type="button" class="button yellow" value="+" onClick='TakeValue("+")'>
+		</p>
+
+		<p>
+      <input type="button" class="button black" value="0" onClick='TakeValue("0")'>
+	  <input type="button" class="button black" value="C" onClick='ClearValue("")'>
+	  <input type="button" class="button black" value="DEL" onclick='BackSpace("")'>
+	  <input type="button" class="button yellow" value="/" onClick='TakeValue("/")'>
+		</p>
+		 
+		<p>
+      <input type="button" class="button black" value="." onClick='TakeValue(".")'> 
+      <input type="button" class="button yellow" value="%" onClick='TakeValue("%")'>     
+      <input type="button" class="button yellow" value="^" onClick='TakeValue("^")'> 
+	  <input type="button" class="button yellow" value="=" onClick='CalculateValue()'>
+		</p>
+</div>
+
+</body>
+<script>
+	var div= document.createElement("div");
+	var span=document.createElement("span");
+	div.appendChild(span);
+	span.innerText="OK";
+	var span2 = document.createElement("span");
+	div.appendChild(span2);
+	div.classList.add("classname");
+	div.style.backgroundColor="red";
+	var button = document.createElement("button");
+	button.innerText="ClickMe";
+	div.appendChild(button);
+	var clickCount = 0;
+	button.addEventListener("click", function(){
+		var color="";
+		while(color.length<6){
+			color+=clickCount;
+		}
+		div.style.backgroundColor="#"+color;
+		clickCount++;
+		if(clickCount>9){
+			div.remove();
+		}
+	});
+	var atn=document.createAttribute("type");
+	atn.value="button";
+	button.attributes.setNamedItem(atn);
+	document.body.appendChild(div);
+	// var table = document.createElement("table");
+	// table.
+
+
+</script>
+</html>
+
